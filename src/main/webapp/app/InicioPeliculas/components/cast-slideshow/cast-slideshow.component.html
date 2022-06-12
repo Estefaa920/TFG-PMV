@@ -1,0 +1,9 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div *ngFor="let actor of cast" class="swiper-slide text-white text-center">
+      <img src="https://image.tmdb.org/t/p/w500/{{ actor.profile_path }}" [alt]="actor.name" class="img-fluid poster" />
+
+      <p class="nombre">{{ actor.name }}</p>
+    </div>
+  </div>
+</div>

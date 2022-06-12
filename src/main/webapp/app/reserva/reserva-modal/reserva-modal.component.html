@@ -1,0 +1,22 @@
+<div class="">
+  <div class="modal-header">
+    <h4 class="modal-title">Resumen de la compra</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body d-flex flex-column me-5 pe-2">
+    <div class="d-flex flex-row justify-content-center">
+      
+      <jhi-reserva
+        [numeroProyeccion]="id_proyeccion"
+        [proyeccion]="proyeccion"
+        [abiertoDesdeModal]="abiertoModal"
+        (aforosSeleccionado)="recuperarAforo($event)"
+      >
+      </jhi-reserva>
+    </div>
+    <div class="modal-footer d-flex justify-content-evenly">
+      <button class="btn btn2" (click)="cerrarModal()">Cancelar</button>
+      <button class="btn btn1" (click)="aceptar()">Confirmar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center p-5 pt-5 bg-dark text-white">
+  <div class="col-8">
+    <div *ngIf="pelicula">
+      <h2 data-cy="peliculaDetailsHeading"><span jhiTranslate="cineApp.pelicula.detail.title">Pelicula</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ pelicula.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.pelicula.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ pelicula.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.pelicula.descripcion">Descripcion</span></dt>
+        <dd>
+          <span>{{ pelicula.descripcion }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.pelicula.duracion">Duracion</span></dt>
+        <dd>
+          <span>{{ pelicula.duracion }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.pelicula.enCartelera">En Cartelera</span></dt>
+        <dd>
+          <span>{{ pelicula.enCartelera }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/pelicula', pelicula.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

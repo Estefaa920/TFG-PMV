@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Aforo.
+    -->
+    <changeSet id="20220503101756-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="proyeccion_id"
+                                 baseTableName="aforo"
+                                 constraintName="fk_aforo__proyeccion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="proyeccion"/>
+
+        <addForeignKeyConstraint baseColumnNames="compra_id"
+                                 baseTableName="aforo"
+                                 constraintName="fk_aforo__compra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="compra"/>
+
+        <addForeignKeyConstraint baseColumnNames="butaca_id"
+                                 baseTableName="aforo"
+                                 constraintName="fk_aforo__butaca_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="butaca"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,13 @@
+.swiper-container {
+  overflow: hidden;
+}
+
+.poster {
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+.nombre {
+  font-size: 13.5px;
+}

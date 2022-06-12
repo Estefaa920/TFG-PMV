@@ -1,0 +1,30 @@
+h3 {
+  font-size: 19px;
+}
+
+.poster {
+  border-radius: 9px;
+
+  min-height: 1px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+.poster:hover {
+  transform: scale(1.035);
+}
+
+.round {
+  border-radius: 7px;
+
+  color: white;
+}
+
+.fondo {
+  background: url('../../content/images/840_560.png') fixed top;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.408);
+}
+
+.card {
+  background: transparent;
+}

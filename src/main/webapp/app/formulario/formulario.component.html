@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-center p-3 pt-3">
+  <div class="">
+    <img class="inicio" src=" ../../content/images/ticket.jpg" alt="" />
+
+    <div class="container shadow p-5">
+      <h1 class="mt-4">{{ titulo }}</h1>
+      <h3>Introduce tus datos:</h3>
+      <img class="ticket" src="../../content/images/ticketCompra.png" alt="" />
+      <div class="form-group mt-5 mb-3 input-container">
+        <label for="nombre_usuario">Nombre y Apellidos</label>
+        <input type="text" class="form-control" [(ngModel)]="nombreComprador" (ngModelChange)="actualizar()" id="nombre_usuario" />
+      </div>
+
+      <br />
+
+      <div class="form-group mb-5 input-container">
+        <label for="dni_usuario">DNI</label>
+        <input type="text" class="form-control effect-16" id="dni_usuario" [(ngModel)]="dniComprador" (ngModelChange)="actualizar()" />
+      </div>
+
+      <!--Formulario Pablo-->
+
+      <h2>Cartelera</h2>
+      <h3 class="mt-3">Películas y horarios</h3>
+      <jhi-formulario-proyeccion></jhi-formulario-proyeccion>
+
+      <button (click)="comidaVisibilidad()" class="mt-4 d-flex bar justify-content-center">
+        <img *ngIf="!mostrarComida" class="m-2 col-3 mt-1" src="../../content/images/1522403.png" alt="" />
+        <img *ngIf="mostrarComida" class="m-2 col-3" src="../../content/images/458594.png" alt="" />
+
+        <h2 class="mt-2 me-2">Bar</h2>
+      </button>
+
+      <!--Formulario Estefania-->
+      <jhi-formulario-producto *ngIf="mostrarComida"></jhi-formulario-producto>
+
+      <div class="d-flex justify-content-end container">
+        <button class="btn btn2 mb-1" (click)="finalizarCompra()">Guardar Compra</button>
+      </div>
+
+      <hr />
+
+      <!--Errores-->
+      <div *ngIf="error" class="alert alert-danger border border-danger">
+        <ul>
+          <li *ngFor="let error of lista_errores">
+            {{ error }}
+          </li>
+        </ul>
+
+        <div class="d-flex justify-content-center ps-5 pe-5 pt-3 pb-3 bg-white">
+          <div class="me-5 ms-5 ps-5 pe-5">
+            <div class="ms-5 me-5 ps-5 pe-5">
+              <img class="inicio" src=" ../../content/images/ticket.jpg" alt="" />
+
+              <div class="container shadow p-5">
+                <h1 class="mt-4">{{ titulo }}</h1>
+                <h3>Introduce tus datos:</h3>
+                <img class="ticket" src="../../content/images/ticketCompra.png" alt="" />
+                <div class="form-group mt-5 mb-3 input-container">
+                  <label for="nombre_usuario">Nombre y Apellidos</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="nombreComprador"
+                    (ngModelChange)="actualizar()"
+                    id="nombre_usuario"
+                  />
+                </div>
+
+                <br />
+
+                <div class="form-group mb-5 input-container">
+                  <label for="dni_usuario">DNI</label>
+                  <input
+                    type="text"
+                    class="form-control effect-16"
+                    id="dni_usuario"
+                    [(ngModel)]="dniComprador"
+                    (ngModelChange)="actualizar()"
+                  />
+                </div>
+
+                <!--Formulario Pablo-->
+
+                <h2>Cartelera</h2>
+                <h3 class="mt-3">Películas y horarios</h3>
+                <jhi-formulario-proyeccion></jhi-formulario-proyeccion>
+
+                <button (click)="comidaVisibilidad()" class="mt-4 d-flex bar justify-content-center">
+                  <img *ngIf="!mostrarComida" class="m-2 col-3 mt-1" src="../../content/images/1522403.png" alt="" />
+                  <img *ngIf="mostrarComida" class="m-2 col-3" src="../../content/images/458594.png" alt="" />
+
+                  <h2 class="mt-2 me-2">Bar</h2>
+                </button>
+
+                <!--Formulario Estefania-->
+                <jhi-formulario-producto *ngIf="mostrarComida"></jhi-formulario-producto>
+
+                <div class="d-flex justify-content-end container">
+                  <button class="btn btn2 mb-1" (click)="finalizarCompra()">Guardar Compra</button>
+                </div>
+
+                <hr />
+
+                <!--Errores-->
+                <div *ngIf="error" class="alert alert-danger border border-danger">
+                  <ul>
+                    <li *ngFor="let error of lista_errores">
+                      {{ error }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

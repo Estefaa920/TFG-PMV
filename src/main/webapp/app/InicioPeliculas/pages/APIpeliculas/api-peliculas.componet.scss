@@ -1,0 +1,54 @@
+.fondo {
+  background: url('../../../../content/images/840_560.png') repeat-x center;
+  background-color: black;
+}
+
+.regresar {
+  padding: 1px 5.5px 4px 6px;
+
+  img {
+    width: 1em;
+  }
+}
+
+.horarios {
+  margin-left: 9em;
+  margin-right: 12em;
+  border-radius: 9px;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  p {
+    font-weight: bold;
+  }
+}
+
+.azul {
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  background-color: #010449;
+}
+
+.hora {
+  border-radius: 3px;
+  background-color: #010449;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.32);
+  color: white;
+  border: none;
+}
+
+.margen2 {
+  margin-left: 20em;
+}
+
+.margen {
+  margin-left: 1em;
+}
+
+.desp {
+  font-size: 15px;
+}
+
+.poster {
+  border-radius: 9px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,55 @@
+<div class="bg-white pt-4 pb-5 m-4">
+  <h1 class="auto-style2 r">SALA DE CINE</h1>
+
+  <div class="d-flex flex-column" style="margin-left: 10em">
+    <span>
+      <fa-icon icon="couch" class="icon-reservado"></fa-icon>
+      Reservado
+    </span>
+
+    <span>
+      <fa-icon icon="couch" class="icon-seleccionado"></fa-icon>
+      Seleccionado
+    </span>
+
+    <span>
+      <fa-icon icon="couch" class="icon"></fa-icon>
+      Libre
+    </span>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="">
+      <div *ngFor="let filaAforo of posicionAforo; let i = index" class="d-flex flex-row justify-content-around m-4 flex-item">
+        <div class="align-self-center letra">
+          {{ nunToChart(i) }}
+        </div>
+
+        <div *ngFor="let aforo of filaAforo; let pasillo = index" (click)="reservar(aforo)" class="d-flex justify-content-around">
+          <span *ngIf="pasillo == posPasillo || pasillo == filaAforo.length - posPasillo"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+
+          <fa-icon
+            icon="couch"
+            class="m-2"
+            [ngClass]="{
+              icon: aforo.butaca!.reservadoFront === false,
+              'icon-reservado': aforo.butaca!.reservadoFront === true,
+              'icon-seleccionado': aforo.butaca!.seleccionadoFront === true
+            }"
+          >
+          </fa-icon>
+        </div>
+
+        <div class="align-self-center letra">
+          {{ nunToChart(i) }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pantalla"></div>
+  <h2 class="pantalla-letra">Pantalla</h2>
+  <button type="button" style="margin-left: 10em" class="btn btn-success" *ngIf="boton && !abiertoDesdeModal" (click)="guardarReserva()">
+    Reservar butacas
+  </button>
+</div>

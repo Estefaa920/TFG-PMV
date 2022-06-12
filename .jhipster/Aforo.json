@@ -1,0 +1,40 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220503101756",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "aforo",
+  "fields": [
+    {
+      "fieldName": "reservada",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Aforo",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "proyeccion",
+      "otherEntityRelationshipName": "aforo",
+      "relationshipName": "proyeccion",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "compra",
+      "otherEntityRelationshipName": "aforo",
+      "relationshipName": "compra",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "butaca",
+      "otherEntityRelationshipName": "aforo",
+      "relationshipName": "butaca",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

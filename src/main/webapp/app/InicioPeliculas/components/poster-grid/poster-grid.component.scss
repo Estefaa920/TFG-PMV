@@ -1,0 +1,37 @@
+h3 {
+  font-size: 15px;
+}
+
+.poster {
+  border-radius: 9px;
+  margin: 5px;
+
+  min-height: 1px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+.poster:hover {
+  transform: scale(1.02);
+}
+
+.round {
+  border-radius: 7px;
+  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.063);
+  color: white;
+
+  // background-color: rgba(255, 255, 255, 0.89);
+}
+
+.swiper-container {
+  overflow: hidden;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// h3 {
+//   font-size: 18px;
+// }

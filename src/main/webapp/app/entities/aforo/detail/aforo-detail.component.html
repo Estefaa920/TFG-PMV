@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center p-5 pt-5 text-white bg-dark">
+  <div class="col-8">
+    <div *ngIf="aforo">
+      <h2 data-cy="aforoDetailsHeading"><span jhiTranslate="cineApp.aforo.detail.title">Aforo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ aforo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.aforo.reservada">Reservada</span></dt>
+        <dd>
+          <span>{{ aforo.reservada }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.aforo.proyeccion">Proyeccion</span></dt>
+        <dd>
+          <div *ngIf="aforo.proyeccion">
+            <a [routerLink]="['/proyeccion', aforo.proyeccion?.id, 'view']">{{ aforo.proyeccion?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cineApp.aforo.compra">Compra</span></dt>
+        <dd>
+          <div *ngIf="aforo.compra">
+            <a [routerLink]="['/compra', aforo.compra?.id, 'view']">{{ aforo.compra?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cineApp.aforo.butaca">Butaca</span></dt>
+        <dd>
+          <div *ngIf="aforo.butaca">
+            <a [routerLink]="['/butaca', aforo.butaca?.id, 'view']">{{ aforo.butaca?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/aforo', aforo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

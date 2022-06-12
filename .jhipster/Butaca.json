@@ -1,0 +1,39 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220421084244",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "butaca",
+  "fields": [
+    {
+      "fieldName": "posicion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "premium",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Butaca",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "aforo",
+      "otherEntityRelationshipName": "butaca",
+      "relationshipName": "aforo",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "sala",
+      "otherEntityRelationshipName": "butaca",
+      "relationshipName": "sala",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

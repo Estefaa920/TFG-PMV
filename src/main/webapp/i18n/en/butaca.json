@@ -1,0 +1,27 @@
+{
+  "cineApp": {
+    "butaca": {
+      "home": {
+        "title": "Butacas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Butaca",
+        "createOrEditLabel": "Create or edit a Butaca",
+        "notFound": "No Butacas found"
+      },
+      "created": "A new Butaca is created with identifier {{ param }}",
+      "updated": "A Butaca is updated with identifier {{ param }}",
+      "deleted": "A Butaca is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Butaca {{ id }}?"
+      },
+      "detail": {
+        "title": "Butaca"
+      },
+      "id": "ID",
+      "posicion": "Posicion",
+      "premium": "Premium",
+      "aforo": "Aforo",
+      "sala": "Sala"
+    }
+  }
+}

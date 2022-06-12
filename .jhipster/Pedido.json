@@ -1,0 +1,34 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220421084444",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pedido",
+  "fields": [
+    {
+      "fieldName": "cantidad",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Pedido",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "compra",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "compra",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "producto",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "producto",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

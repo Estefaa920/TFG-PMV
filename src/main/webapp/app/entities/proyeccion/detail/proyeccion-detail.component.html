@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center p-5 pt-5 bg-dark text-white">
+  <div class="col-8">
+    <div *ngIf="proyeccion">
+      <h2 data-cy="proyeccionDetailsHeading"><span jhiTranslate="cineApp.proyeccion.detail.title">Proyeccion</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ proyeccion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.proyeccion.fecha">Fecha</span></dt>
+        <dd>
+          <span>{{ proyeccion.fecha | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.proyeccion.precio">Precio</span></dt>
+        <dd>
+          <span>{{ proyeccion.precio }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.proyeccion.pelicula">Pelicula</span></dt>
+        <dd>
+          <div *ngIf="proyeccion.pelicula">
+            <a [routerLink]="['/pelicula', proyeccion.pelicula?.id, 'view']">{{ proyeccion.pelicula?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cineApp.proyeccion.sala">Sala</span></dt>
+        <dd>
+          <div *ngIf="proyeccion.sala">
+            <a [routerLink]="['/sala', proyeccion.sala?.id, 'view']">{{ proyeccion.sala?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/proyeccion', proyeccion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

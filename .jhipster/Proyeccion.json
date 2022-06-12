@@ -1,0 +1,51 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220421084044",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "proyeccion",
+  "fields": [
+    {
+      "fieldName": "fecha",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Proyeccion",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "compra",
+      "otherEntityRelationshipName": "proyeccion",
+      "relationshipName": "compra",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "aforo",
+      "otherEntityRelationshipName": "proyeccion",
+      "relationshipName": "aforo",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pelicula",
+      "otherEntityRelationshipName": "proyeccion",
+      "relationshipName": "pelicula",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "sala",
+      "otherEntityRelationshipName": "proyeccion",
+      "relationshipName": "sala",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

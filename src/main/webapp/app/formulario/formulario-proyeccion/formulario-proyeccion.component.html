@@ -1,0 +1,58 @@
+<div class="">
+  <div *ngIf="proyeccionSeleccionada !== undefined && lista_aforo.length > 0" class="alert alert-success mt-5">
+    Seleccionada Correctamente
+    <ul>
+      <li>Pelicula: {{ proyeccionSeleccionada.pelicula?.nombre }}</li>
+      <li>Hora: {{ formatDate(proyeccionSeleccionada) }}</li>
+      <li>Sala: {{ proyeccionSeleccionada.sala?.id }}</li>
+    </ul>
+  </div>
+
+  <br />
+
+  <br />
+  <div class="container" *ngIf="!seleccionPrevia">
+    <div class="input-group mt-3 container">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Buscar Película</span>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Default"
+        aria-describedby="inputGroup-sizing-default"
+        [(ngModel)]="nombre_pelicula"
+        (ngModelChange)="actualizarNombre()"
+      />
+    </div>
+
+    <br />
+
+    <div class="table-responsive" id="entities" *ngIf="peliculas && peliculas.length > 0 && !seleccionPrevia">
+      <table class="table table-striped" aria-describedby="page-heading" style="vertical-align: middle">
+        <thead>
+          <tr>
+            <th scope="col"><span jhiTranslate="cineApp.pelicula.nombre">Nombre</span></th>
+            <th scope="col "><span jhiTranslate="cineApp.pelicula.descripcion">Descripcion</span></th>
+            <th scope="col"><span jhiTranslate="cineApp.pelicula.duracion">Duracion</span></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pelicula of peliculas; trackBy: trackId" data-cy="entityTable">
+            <td>
+              <span class="titulo">{{ pelicula.nombre }}</span>
+            </td>
+            <td>
+              <span class="desc">{{ pelicula.descripcion }}</span>
+            </td>
+            <td>{{ pelicula.duracion }}</td>
+            <td class="text-end">
+              <button class="btn btn1" (click)="openModal(pelicula.id!, pelicula.nombre!)">Seleccionar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

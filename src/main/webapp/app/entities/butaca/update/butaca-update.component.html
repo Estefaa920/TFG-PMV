@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-center p-5 pt-5 bg-dark text-white">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-butaca-heading" data-cy="ButacaCreateUpdateHeading" jhiTranslate="cineApp.butaca.home.createOrEditLabel">
+        Create or edit a Butaca
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.butaca.posicion" for="field_posicion">Posicion</label>
+          <input type="text" class="form-control" name="posicion" id="field_posicion" data-cy="posicion" formControlName="posicion" />
+          <div *ngIf="editForm.get('posicion')!.invalid && (editForm.get('posicion')!.dirty || editForm.get('posicion')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('posicion')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.butaca.premium" for="field_premium">Premium</label>
+          <input type="checkbox" class="form-check" name="premium" id="field_premium" data-cy="premium" formControlName="premium" />
+          <div *ngIf="editForm.get('premium')!.invalid && (editForm.get('premium')!.dirty || editForm.get('premium')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('premium')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.butaca.sala" for="field_sala">Sala</label>
+          <select class="form-control" id="field_sala" data-cy="sala" name="sala" formControlName="sala">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="salaOption.id === editForm.get('sala')!.value?.id ? editForm.get('sala')!.value : salaOption"
+              *ngFor="let salaOption of salasSharedCollection; trackBy: trackSalaById"
+            >
+              {{ salaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

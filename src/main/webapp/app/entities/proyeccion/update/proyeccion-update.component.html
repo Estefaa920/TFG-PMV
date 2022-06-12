@@ -1,0 +1,100 @@
+<div class="d-flex justify-content-center p-5 pt-5 bg-dark text-white">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-proyeccion-heading" data-cy="ProyeccionCreateUpdateHeading" jhiTranslate="cineApp.proyeccion.home.createOrEditLabel">
+        Create or edit a Proyeccion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.proyeccion.fecha" for="field_fecha">Fecha</label>
+          <div class="d-flex">
+            <input
+              id="field_fecha"
+              data-cy="fecha"
+              type="datetime-local"
+              class="form-control"
+              name="fecha"
+              formControlName="fecha"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('fecha')!.invalid && (editForm.get('fecha')!.dirty || editForm.get('fecha')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('fecha')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('fecha')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.proyeccion.precio" for="field_precio">Precio</label>
+          <input type="number" class="form-control" name="precio" id="field_precio" data-cy="precio" formControlName="precio" />
+          <div *ngIf="editForm.get('precio')!.invalid && (editForm.get('precio')!.dirty || editForm.get('precio')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('precio')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('precio')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.proyeccion.pelicula" for="field_pelicula">Pelicula</label>
+          <select class="form-control" id="field_pelicula" data-cy="pelicula" name="pelicula" formControlName="pelicula">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="peliculaOption.id === editForm.get('pelicula')!.value?.id ? editForm.get('pelicula')!.value : peliculaOption"
+              *ngFor="let peliculaOption of peliculasSharedCollection; trackBy: trackPeliculaById"
+            >
+              {{ peliculaOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.proyeccion.sala" for="field_sala">Sala</label>
+          <select class="form-control" id="field_sala" data-cy="sala" name="sala" formControlName="sala">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="salaOption.id === editForm.get('sala')!.value?.id ? editForm.get('sala')!.value : salaOption"
+              *ngFor="let salaOption of salasSharedCollection; trackBy: trackSalaById"
+            >
+              {{ salaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title">Sesiones para {{ pelicula_nombre }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form action="" method="post">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Precio</th>
+            <th>Sala</th>
+            <th>Seleccion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let proyeccion of proyecciones; let i = index">
+            <td>{{ formatDate(proyeccion) }}</td>
+            <td>{{ proyeccion.precio }}</td>
+            <td>{{ proyeccion.sala?.nombre }}</td>
+            <td style="text-align: center">
+              <input
+                type="radio"
+                style="transform: scale(1.8)"
+                name="proyeccion_horario"
+                value="{{ i }}"
+                (change)="seleccionarPelicula(proyeccion_index.value)"
+                #proyeccion_index
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn2" (click)="cerrarModal(false)">Close</button>
+    <button
+      type="submit"
+      class="btn btn1"
+      [routerLink]="['/proyeccion/reserva', proyeccionSelecionada?.id, 'butacas']"
+      (click)="cerrarModal(true)"
+      *ngIf="boton"
+    >
+      Reserva
+    </button>
+  </div>
+</div>

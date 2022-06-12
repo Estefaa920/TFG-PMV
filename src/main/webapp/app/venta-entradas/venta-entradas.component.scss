@@ -1,0 +1,63 @@
+.fondo {
+  background: url('../../content/images/840_560.png') fixed center repeat-x;
+  background-color: black;
+}
+
+.fondoH {
+  height: 100%;
+}
+
+.tx {
+  display: block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #e4e5e6;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0.15rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.pelis {
+  border-radius: 9px;
+  height: 35em;
+  padding: 5%;
+
+  overflow-y: auto;
+}
+
+#field_fecha {
+  width: 12em;
+}
+
+.e {
+  display: none;
+}
+
+.fondo2 {
+  // #01034a69
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.273);
+  border-radius: 9px;
+}
+
+.poster {
+  border-radius: 9px;
+  margin: 5px;
+  width: 7.5em;
+  min-height: 1px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+.hora {
+  border-radius: 3px;
+  background-color: #f1f1f1;
+}
+
+.fondo3 {
+  border-radius: 9px;
+}

@@ -1,0 +1,12 @@
+<div class="swiper-container mb-5">
+  <div class="swiper-wrapper">
+    <div class="round text-start swiper-slide" *ngFor="let movie of movies">
+      <img class="img-fluid poster mt-3 col-9" (click)="onMovieClick(movie)" src="https://image.tmdb.org/t/p/w500/{{ movie.url }}" />
+
+      <!-- 
+      <h3 class=" col-10">{{ movie.title }}</h3> -->
+
+      <!-- <p>{{ movie.release_date }}</p> -->
+    </div>
+  </div>
+</div>

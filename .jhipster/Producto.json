@@ -1,0 +1,38 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220421084544",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "producto",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cantidad",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Producto",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "producto",
+      "relationshipName": "pedido",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

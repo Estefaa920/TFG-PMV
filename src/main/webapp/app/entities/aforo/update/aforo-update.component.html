@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-center p-5 pt-5 bg-dark text-white">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-aforo-heading" data-cy="AforoCreateUpdateHeading" jhiTranslate="cineApp.aforo.home.createOrEditLabel">
+        Create or edit a Aforo
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.aforo.reservada" for="field_reservada">Reservada</label>
+          <input type="checkbox" class="form-check" name="reservada" id="field_reservada" data-cy="reservada" formControlName="reservada" />
+          <div *ngIf="editForm.get('reservada')!.invalid && (editForm.get('reservada')!.dirty || editForm.get('reservada')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('reservada')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.aforo.proyeccion" for="field_proyeccion">Proyeccion</label>
+          <select class="form-control" id="field_proyeccion" data-cy="proyeccion" name="proyeccion" formControlName="proyeccion">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                proyeccionOption.id === editForm.get('proyeccion')!.value?.id ? editForm.get('proyeccion')!.value : proyeccionOption
+              "
+              *ngFor="let proyeccionOption of proyeccionsSharedCollection; trackBy: trackProyeccionById"
+            >
+              {{ proyeccionOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.aforo.compra" for="field_compra">Compra</label>
+          <select class="form-control" id="field_compra" data-cy="compra" name="compra" formControlName="compra">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="compraOption.id === editForm.get('compra')!.value?.id ? editForm.get('compra')!.value : compraOption"
+              *ngFor="let compraOption of comprasSharedCollection; trackBy: trackCompraById"
+            >
+              {{ compraOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="cineApp.aforo.butaca" for="field_butaca">Butaca</label>
+          <select class="form-control" id="field_butaca" data-cy="butaca" name="butaca" formControlName="butaca">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="butacaOption.id === editForm.get('butaca')!.value?.id ? editForm.get('butaca')!.value : butacaOption"
+              *ngFor="let butacaOption of butacasSharedCollection; trackBy: trackButacaById"
+            >
+              {{ butacaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "cineApp": {
+    "pelicula": {
+      "home": {
+        "title": "Peliculas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pelicula",
+        "createOrEditLabel": "Create or edit a Pelicula",
+        "notFound": "No Peliculas found"
+      },
+      "created": "A new Pelicula is created with identifier {{ param }}",
+      "updated": "A Pelicula is updated with identifier {{ param }}",
+      "deleted": "A Pelicula is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pelicula {{ id }}?"
+      },
+      "detail": {
+        "title": "Pelicula"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "duracion": "Duracion",
+      "enCartelera": "En Cartelera",
+      "proyeccion": "Proyeccion"
+    }
+  }
+}

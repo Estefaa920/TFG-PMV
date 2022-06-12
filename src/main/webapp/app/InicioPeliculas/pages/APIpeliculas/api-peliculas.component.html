@@ -1,0 +1,69 @@
+<div class="text-white fondo pb-5">
+  <div class="d-flex justify-content-center">
+    <div class="row container p-5 d-flex justify-content align-items-center" *ngIf="pelicula">
+      <div class="col-md-4 me-5">
+        <img src="https://image.tmdb.org/t/p/w500/{{ pelicula.poster_path }}" class="img-fluid poster col-12" />
+      </div>
+
+      <div class="col-md-7 mt-3">
+        <div class="d-flex align-items-start">
+          <div class="col-11">
+            <h2>{{ pelicula.title }}</h2>
+            <h3>{{ pelicula.release_date }}</h3>
+            <p>{{ pelicula.runtime }} min.</p>
+          </div>
+          <button class="btn btn2 regresar" (click)="onRegresar()">
+            <img src="./../../../../content/images/x.png" alt="" />
+          </button>
+        </div>
+        <div class="col-11">
+          <div class="row desp mt-3">
+            <p>{{ pelicula.overview }}</p>
+          </div>
+
+          <div class="mt-2 pt-1" *ngIf="cast.length > 0">
+            <h5>Actores:</h5>
+            <jhi-cast-slideshow [cast]="cast"></jhi-cast-slideshow>
+          </div>
+
+           <!--<div class="margen2 d-flex justify-content-end">
+            <div class="">
+              <div class="d-flex align-items-baseline">
+                <p class="me-3 fs-5">Horarios:</p>
+                <form class="" name="editForm" role="form" novalidate [formGroup]="editForm">
+                  <input
+                    id="field_fecha"
+                    data-cy="fecha"
+                    type="date"
+                    class="form-control"
+                    name="fecha"
+                    formControlName="fecha"
+                    placeholder="YYYY-MM-DD"
+                    [min]="minDate"
+                    [max]="maxDate"
+                  />
+                </form>
+                <button class="btn btn1 mt-2 ms-1" (click)="mostrarHorario()">▼</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <ng-container *ngIf="mostrar">
+    <div class="horarios text-white" *ngIf="peliculaOrder.length !== 0">
+      <div class="fs-5 ps-3 pe-3 azul p-2">
+        {{ titulo }}
+      </div>
+
+    <div class="p-3 d-flex">
+        <p class="m-2 text-black">Dígital:</p>
+        <button class="hora text-center m-2 fs-6" *ngFor="let movie of peliculaOrder">
+          <span *ngFor="let proyec of movie.proyeccions">{{ formatDateEntrada(proyec) }}</span>
+        </button>
+      </div>
+    </div>
+  </ng-container>-->
+</div>

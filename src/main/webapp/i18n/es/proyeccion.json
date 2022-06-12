@@ -1,0 +1,29 @@
+{
+  "cineApp": {
+    "proyeccion": {
+      "home": {
+        "title": "Proyeccions",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Proyeccion",
+        "createOrEditLabel": "Crear o editar Proyeccion",
+        "notFound": "Ningún Proyeccions encontrado"
+      },
+      "created": "Un nuevo Proyeccion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Proyeccion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Proyeccion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Proyeccion {{ id }}?"
+      },
+      "detail": {
+        "title": "Proyeccion"
+      },
+      "id": "ID",
+      "fecha": "Fecha",
+      "precio": "Precio",
+      "compra": "Compra",
+      "aforo": "Aforo",
+      "pelicula": "Pelicula",
+      "sala": "Sala"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CineApp<cine>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cine.app.CineApp",
+            "projectName": "cine",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

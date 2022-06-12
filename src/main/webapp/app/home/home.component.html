@@ -1,0 +1,42 @@
+<div [ngSwitch]="account !== null && !cliente">
+  <div class=" ">
+    <div
+      class="d-flex justify-content-center pb-5"
+      [ngClass]="{
+        fondo: account === null,
+        fondo2: cliente === true,
+        'bg-dark': account !== null
+      }"
+    >
+      <div class="login col-11 me-1 mt-3 text-white">
+        <div
+          class="container hidden"
+          [ngClass]="{
+            hidden: account === null,
+            'pt-2': cliente === true
+          }"
+        >
+          <span>Usuario:</span>
+          {{ account?.login }}
+        </div>
+        <div
+          class="container hidden"
+          [ngClass]="{
+            hidden: account === null,
+            'pb-2': cliente === true
+          }"
+        >
+          <span>Correo:</span>
+          {{ account?.email }}
+        </div>
+        <div class="" *ngSwitchCase="false">
+          <jhi-inicio-pelicula></jhi-inicio-pelicula>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white text-white" *ngSwitchCase="true">
+      <jhi-inicio></jhi-inicio>
+    </div>
+  </div>
+</div>

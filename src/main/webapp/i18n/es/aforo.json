@@ -1,0 +1,27 @@
+{
+  "cineApp": {
+    "aforo": {
+      "home": {
+        "title": "Aforos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Aforo",
+        "createOrEditLabel": "Crear o editar Aforo",
+        "notFound": "Ningún Aforos encontrado"
+      },
+      "created": "Un nuevo Aforo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Aforo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Aforo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Aforo {{ id }}?"
+      },
+      "detail": {
+        "title": "Aforo"
+      },
+      "id": "ID",
+      "reservada": "Reservada",
+      "proyeccion": "Proyeccion",
+      "compra": "Compra",
+      "butaca": "Butaca"
+    }
+  }
+}

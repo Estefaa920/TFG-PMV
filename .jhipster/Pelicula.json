@@ -1,0 +1,43 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220421083944",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pelicula",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "duracion",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "enCartelera",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Pelicula",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "proyeccion",
+      "otherEntityRelationshipName": "pelicula",
+      "relationshipName": "proyeccion",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

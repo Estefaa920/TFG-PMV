@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center p-5 pt-5 text-white bg-dark">
+  <div class="col-8">
+    <div *ngIf="butaca">
+      <h2 data-cy="butacaDetailsHeading"><span jhiTranslate="cineApp.butaca.detail.title">Butaca</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ butaca.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.butaca.posicion">Posicion</span></dt>
+        <dd>
+          <span>{{ butaca.posicion }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.butaca.premium">Premium</span></dt>
+        <dd>
+          <span>{{ butaca.premium }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.butaca.sala">Sala</span></dt>
+        <dd>
+          <div *ngIf="butaca.sala">
+            <a [routerLink]="['/sala', butaca.sala?.id, 'view']">{{ butaca.sala?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/butaca', butaca.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

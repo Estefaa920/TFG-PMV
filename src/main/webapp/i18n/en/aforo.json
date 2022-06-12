@@ -1,0 +1,27 @@
+{
+  "cineApp": {
+    "aforo": {
+      "home": {
+        "title": "Aforos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Aforo",
+        "createOrEditLabel": "Create or edit a Aforo",
+        "notFound": "No Aforos found"
+      },
+      "created": "A new Aforo is created with identifier {{ param }}",
+      "updated": "A Aforo is updated with identifier {{ param }}",
+      "deleted": "A Aforo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Aforo {{ id }}?"
+      },
+      "detail": {
+        "title": "Aforo"
+      },
+      "id": "ID",
+      "reservada": "Reservada",
+      "proyeccion": "Proyeccion",
+      "compra": "Compra",
+      "butaca": "Butaca"
+    }
+  }
+}

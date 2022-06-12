@@ -1,0 +1,57 @@
+<div class="p-5 bg-dark text-white">
+  <div class="pe-5 mt-5 ps-5 me-5 ms-5 pb-5 mb-5">
+    <h1>Creacion de Pelicula</h1>
+    <hr />
+
+    <div class="d-flex column m-2">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Título</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="titulo"
+          aria-label="Título"
+          aria-describedby="basic-addon1"
+          [(ngModel)]="titulo_pelicula"
+        />
+      </div>
+    </div>
+
+    <div class="input-group m-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Descripcion de la pelicula</span>
+        <textarea class="form-control" aria-label="" [(ngModel)]="descripcion_pelicula"></textarea>
+      </div>
+    </div>
+
+    <div class="d-flex column m-2">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Duracion</span>
+        </div>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="159"
+          aria-label="duracion"
+          aria-describedby="basic-addon1"
+          [(ngModel)]="duracion_pelicula"
+        />
+      </div>
+    </div>
+
+    <div *ngIf="lista_errores.length > 0" class="alert alert-danger border border-danger">
+      <ul>
+        <li *ngFor="let error of lista_errores">{{ error }}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="carga_correcta === true" class="alert alert-success border border-success mt-3">
+      <span>Pelicula creada correctamente</span>
+    </div>
+
+    <button class="btn btn2 col-1 mb-3" (click)="guardarPelicula()">Crear</button>
+  </div>
+</div>

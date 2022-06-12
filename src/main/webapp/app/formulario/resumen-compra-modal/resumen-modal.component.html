@@ -1,0 +1,46 @@
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title">Resumen de la compra</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body d-flex flex-column">
+    <div class="d-flex flex-row">
+      Nombre: {{ this.compraFinal.nombre }}
+      <br />
+      DNI: {{ this.compraFinal.dni }}
+    </div>
+
+    <div class="d-flex flex-row">
+      Proyeccion : {{ this.compraFinal.proyeccion?.pelicula?.nombre }} -- {{ this.compraFinal.proyeccion?.fecha }}
+    </div>
+
+    <hr />
+
+    <div>
+      Butacas:
+      <br />
+
+      <span *ngFor="let aforo of aforos">
+        {{ aforo.butaca!.posicion }}
+      </span>
+    </div>
+    <hr />
+    <div>
+      Comida:<br />
+      <ul>
+        <li *ngFor="let pedido of this.compraFinal.pedidos">
+          {{ pedido.producto!.nombre }}
+          {{ pedido.cantidad }}
+          {{ pedido.producto!.precio! * pedido.cantidad! }}€
+          <br />
+        </li>
+      </ul>
+    </div>
+
+    Precio Total: {{ this.compraFinal.precioTotal }}
+  </div>
+  <div class="modal-footer d-flex justify-content-evenly">
+    <button class="btn btn2" (click)="cerrarModal()">Cancelar</button>
+    <button class="btn btn1" (click)="guardarCompra()">Confirmar</button>
+  </div>
+</div>

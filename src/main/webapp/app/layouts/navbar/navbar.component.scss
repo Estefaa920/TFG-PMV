@@ -1,0 +1,93 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+/* ==========================================================================
+Navbar
+========================================================================== */
+img {
+  width: 10.59em;
+}
+
+.spacer {
+  margin-left: 0.5em;
+}
+
+.iconMenu {
+  box-shadow: -12px -3px 205px 1px rgb(0, 0, 0);
+}
+
+.lista {
+  // margin-top: 3em;
+
+  a {
+    font-size: 17px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-top: 0.5em;
+  }
+
+  fa-icon {
+    font-size: 18px;
+  }
+}
+
+.delante {
+  position: fixed;
+  background-color: #010452;
+  box-shadow: 0px 7px 12px -4px rgba(0, 0, 0, 0.35);
+  box-shadow: 9px 9px 70px -26px rgba(0, 0, 0, 0.7) inset;
+  z-index: 1000;
+}
+
+.fuente {
+  font-size: 10px;
+}
+
+.sidenav {
+  position: fixed;
+  background-color: #6a8bc6;
+  box-shadow: 34px 1px 77px -67px rgba(0, 0, 0, 0.23);
+}
+
+.block {
+  position: fixed;
+  font-size: 15px;
+}
+
+.position {
+  position: fixed;
+  top: 0.5em;
+  right: 1.5em;
+  z-index: 1000;
+}
+
+.atras {
+  z-index: 100;
+}
+
+.navbar-version {
+  font-size: 0.65em;
+  color: $navbar-dark-color;
+}
+
+.profile-image {
+  height: 1.75em;
+  width: 1.75em;
+}
+
+.navbar {
+  padding: 0.2rem 1rem;
+  height: 10%;
+
+  a.nav-link {
+    font-weight: 400;
+  }
+}
+
+.index {
+  z-index: 1000000000;
+}
+
+/* ==========================================================================
+Logo styles
+========================================================================== */

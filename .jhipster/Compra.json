@@ -1,0 +1,50 @@
+{
+  "applications": ["Cine"],
+  "changelogDate": "20220421084344",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "compra",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dni",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precioTotal",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Compra",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "compra",
+      "relationshipName": "pedido",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "aforo",
+      "otherEntityRelationshipName": "compra",
+      "relationshipName": "aforo",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "proyeccion",
+      "otherEntityRelationshipName": "compra",
+      "relationshipName": "proyeccion",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

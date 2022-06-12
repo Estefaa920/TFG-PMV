@@ -1,0 +1,14 @@
+<div class="fondo text-white pb-5">
+  <h1 class="pt-5 ps-5 ms-5">Cartelera</h1>
+  <div class="d-flex flex-wrap pe-5 ps-5 justify-content-center">
+    <div class="pe-3 m-3 mb-2 round pr col-md-3 col-sm-5 col-xl-2 text-center card justify-content-around" *ngFor="let movie of movies">
+      <div class="     ">
+        <img class="img-fluid poster mt-3" (click)="onMovieClick(movie)" src="https://image.tmdb.org/t/p/w500/{{ movie.url }}" />
+      </div>
+
+      <h3 class="mt-2">{{ movie.nombre }}</h3>
+
+      <p>{{ movie.duracion }} min.</p>
+    </div>
+  </div>
+</div>

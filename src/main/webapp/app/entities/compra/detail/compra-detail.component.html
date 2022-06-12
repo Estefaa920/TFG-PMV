@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center p-5 pt-5 bg-dark text-white">
+  <div class="col-8">
+    <div *ngIf="compra">
+      <h2 data-cy="compraDetailsHeading"><span jhiTranslate="cineApp.compra.detail.title">Compra</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ compra.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.compra.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ compra.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.compra.dni">Dni</span></dt>
+        <dd>
+          <span>{{ compra.dni }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.compra.precioTotal">Precio Total</span></dt>
+        <dd>
+          <span>{{ compra.precioTotal }}</span>
+        </dd>
+        <dt><span jhiTranslate="cineApp.compra.proyeccion">Proyeccion</span></dt>
+        <dd>
+          <div *ngIf="compra.proyeccion">
+            <a [routerLink]="['/proyeccion', compra.proyeccion?.id, 'view']">{{ compra.proyeccion?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/compra', compra.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

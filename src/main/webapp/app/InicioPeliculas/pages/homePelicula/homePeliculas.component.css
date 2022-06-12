@@ -1,0 +1,62 @@
+.carrusel img {
+  padding: auto;
+}
+
+.cartelera {
+  position: absolute;
+  top: 30;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  z-index: 100000;
+}
+
+span {
+  z-index: auto;
+  color: black;
+}
+
+h1 {
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.container .data h4 {
+  color: #f29100;
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.container .data {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.container .data h2 {
+  font-size: 2rem;
+}
+
+.container .data p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.container .data a.button {
+  text-shadow: none;
+
+  background: #f29100;
+  color: #fff;
+  padding: 8px 32px;
+  margin: 20px 0 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
